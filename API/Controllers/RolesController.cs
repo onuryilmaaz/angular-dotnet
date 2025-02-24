@@ -43,6 +43,7 @@ namespace API.Controllers
         #endregion
 
         #region GetRoles
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RoleResponseDto>>> GetRoles()
         {
@@ -102,7 +103,7 @@ namespace API.Controllers
 
             var error = result.Errors.FirstOrDefault();
 
-            return BadRequest(error?.Description); 
+            return BadRequest(error?.Description);
         }
         #endregion
     }
