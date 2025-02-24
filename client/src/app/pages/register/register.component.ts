@@ -14,7 +14,7 @@ import { Router, RouterLink } from '@angular/router';
 import { RoleService } from '../../services/role.service';
 import { Observable } from 'rxjs';
 import { Role } from '../../interfaces/role';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -28,6 +28,7 @@ import { AuthService } from '../../services/auth.service';
     ReactiveFormsModule,
     MatFormFieldModule,
     AsyncPipe,
+    CommonModule,
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
@@ -42,9 +43,7 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   router = inject(Router);
 
-  register() {
-    
-  }
+  register() {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group(
