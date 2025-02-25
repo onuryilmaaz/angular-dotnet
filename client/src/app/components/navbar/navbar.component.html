@@ -40,6 +40,14 @@
           <h1 class="p-0 m-0 text-xs">All User</h1>
           <mat-icon>groups</mat-icon>
         </a>
+        <a
+          *ngIf="userDetail?.roles.includes('Admin')"
+          mat-button
+          routerLink="/roles"
+        >
+          <h1 class="p-0 m-0 text-xs">Roles</h1>
+          <mat-icon>settings</mat-icon>
+        </a>
       </div>
     </div>
     } @else {
