@@ -4,6 +4,15 @@
     [formGroup]="registerForm"
     (ngSubmit)="register()"
   >
+    @for(error of errors;track error) {
+    <div
+      class="bg-red-100 border mb-2 flex flex-col gap-2 border-red-400 text-red-400 px-4 py-4 rounded-md relative"
+    >
+      <div class="text-xs">
+        {{ error.description }}
+      </div>
+    </div>
+    }
     <div class="py-4">
       <h1 class="font-bold text-left py-2">Register</h1>
       <h6 class="text-slate-600 text-base">Create your account</h6>
@@ -26,7 +35,9 @@
       <mat-icon matPrefix>groups</mat-icon>
       <mat-select formControlName="roles" multiple>
         @for(item of roles$ | async;track item) {
-        <mat-option [value]="item.name"></mat-option>
+        <mat-option [value]="item.name">
+          {{ item.name }}
+        </mat-option>
         }
       </mat-select>
     </mat-form-field>
