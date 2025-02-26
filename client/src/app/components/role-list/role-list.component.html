@@ -1,5 +1,5 @@
-<div class="border-slate-100 border-b p-3 fl gap-2 justify-between">
-  <table class="text-left w-full border">
+<div class="bg-white mt-5 p-4 rounded-md gap-2 justify-between">
+  <table class="text-left w-full border bg-white text-black">
     <thead>
       <tr class="px-5">
         <th class="border p-2">Name</th>
@@ -9,14 +9,13 @@
       @for (role of roles; track role.id) {
       <tr class="border-b">
         <td class="border p-3">{{ role.name }}</td>
-        <td class="border p-3"></td>
+        <td class="border p-3 text-center">-</td>
         <td class="border p-3 flex items-center gap-5">
-          <div>
-            <mat-icon
-              (click)="delete(role.id)"
-              class="cursor-pointer text-red-600"
-              >delete</mat-icon
-            >
+          <div
+            (click)="delete(role.id)"
+            class="flex items-center justify-center font-bold"
+          >
+            <mat-icon class="cursor-pointer text-red-600">delete</mat-icon>Sil
           </div>
         </td>
       </tr>

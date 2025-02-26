@@ -38,6 +38,6 @@ export class NavbarComponent {
       duration: 5000,
       horizontalPosition: 'center',
     });
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }
